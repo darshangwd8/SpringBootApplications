@@ -1,0 +1,8 @@
+package com.n2s.main.model;
+
+public class LoginBean {
+	private String uname;
+	private String pwd;
+	
+
+}

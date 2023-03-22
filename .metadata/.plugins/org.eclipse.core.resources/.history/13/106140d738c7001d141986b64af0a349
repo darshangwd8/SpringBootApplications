@@ -1,0 +1,5 @@
+package com.n2s.main.controller;
+
+public class UserController {
+
+}

@@ -1,0 +1,20 @@
+package com.n2s.main.controller;
+
+
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import com.n2s.main.model.LoginBean;
+
+
+
+@Controller
+public class LoginController {
+	public String login(Model m) {
+		m.addAttribute("lb",new LoginBean());
+		return "Login";
+		
+	}
+
+}

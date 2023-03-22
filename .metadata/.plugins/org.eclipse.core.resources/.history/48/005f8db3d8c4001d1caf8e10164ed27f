@@ -1,0 +1,76 @@
+package com.n2s.main.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import com.n2s.main.model.Login;
+
+import jakarta.annotation.PostConstruct;
+
+@Repository
+public class LoginDaoImp extends JdbcDaoSupport implements LoginDao {
+    
+	@Autowired
+	DataSource dataSource;
+	
+	@PostConstruct
+	public void initialise() {
+		setDataSource(dataSource);
+	}
+	@Override
+	public void insertUser(Login l) {
+		// TODO Auto-generated method stub
+		String sql = "INSERT INTO login(id,uname,pwd) VAlUES (?,?,?)";
+		getJdbcTemplate().update(sql,new Object[] {l.getId(),l.getUname(),l.getPwd()});
+		
+	}
+
+	@Override
+	public List<Login> getAllUser() {
+		String sql = "SELECT * FROM login";
+		List<Map<String,Object>> rows =  getJdbcTemplate().queryForList(sql);
+		
+		List<Login> result = new ArrayList<Login>();
+		for(Map<String,Object> row:rows) {
+			Login l = new Login();
+			l.setId(Integer.parseInt(row.get("Id").toString()));
+			l.setUname(row.get("uname").toString());
+			l.setPwd(row.get("pwd").toString());
+			System.out.println(l);
+			result.add(l);
+			
+		}
+		return result;
+			
+		
+	}
+
+	@Override
+	public Login getUserById(int id) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM login WHERE id =?";
+		return(Login)getJdbcTemplate().queryForObject(sql, new Object[] {id}, new RowMapper<Login>() {
+			@Override
+			public Login mapRow(ResultSet rs,int rwNumber) throws SQLException{
+				Login l= new Login();
+				l.setUname(rs.getString("uname"));
+				l.setPwd(rs.getString("pwd"));
+				System.out.println(l);
+				return l;
+			}
+		}
+		
+		return u;
+	}
+	
+}

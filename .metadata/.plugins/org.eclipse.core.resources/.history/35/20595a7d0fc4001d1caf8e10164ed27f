@@ -1,0 +1,11 @@
+package com.n2s.main;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class IndexController {
+	public void starthome() {
+		System.out.println("Index");
+	}
+
+}

@@ -1,0 +1,45 @@
+package com.n2s.main.model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class User {
+	private String username,pwd;
+	private long id;
+	
+	public String getUsername() {
+		return username;
+	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public String getPwd() {
+		return pwd;
+	}
+	
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	
+	public long getIdl() {
+		return id;
+	}
+	
+	public void setIdl(long id) {
+		this.id = id;
+	}
+	
+	public User(String username, String pwd) {
+		super();
+		this.username = username;
+		this.pwd = pwd;
+	}
+	
+	public User() {
+		super();
+	}
+	
+
+}

@@ -1,0 +1,12 @@
+management.endpoints.web.exposure.include=*
+
+
+info.app.name=spring boot actuator
+info.app.decription= This is actuator testing
+info.app.version=1.0
+
+
+management.endpoint.health.show-details=always
+
+# logging
+logging.file.name=app.log

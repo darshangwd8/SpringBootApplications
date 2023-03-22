@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<titlle>
+			Form submission
+		</titlle>
+	</head>
+<body>
+<h1>
+	Welcome
+</h1>
+<tr>
+	<td>User name</td>
+	<td><p th:text="${lb.uname}"></p></td>
+</tr>
+<tr>
+	<td>Password</td>
+	<td><p th:text="${lb.pwd}"></p></td>
+</tr>
+
+<p>This text is normal.</p>
+
+<p><b>This text is bold.</b></p>
+
+</body>
+</html>
+

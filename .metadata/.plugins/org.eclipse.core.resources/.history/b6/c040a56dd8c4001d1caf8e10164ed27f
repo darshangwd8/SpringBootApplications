@@ -1,0 +1,32 @@
+package com.n2s.main.dao;
+
+import java.util.List;
+
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import com.n2s.main.model.Login;
+
+@Repository
+public class LoginDaoImp extends JdbcDaoSupport implements LoginDao {
+
+	@Override
+	public void insertUser(Login l) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Login> getAllUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Login getUserById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}

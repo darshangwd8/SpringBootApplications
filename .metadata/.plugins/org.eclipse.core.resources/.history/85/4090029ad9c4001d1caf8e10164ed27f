@@ -1,0 +1,28 @@
+package com.n2s.main;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.n2s.main.model.Login;
+import com.n2s.main.service.LoginService;
+
+@SpringBootApplication
+public class SpringBootJdbcApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext context = SpringApplication.run(SpringBootJdbcApplication.class, args);
+        LoginService ls = context.getBean(LoginService.class);
+        
+        Login l = new Login();
+        
+        l.setId(100);
+        l.setPwd("******");
+        l.setUname("Darshan");
+        
+        ls.insertUser(l);
+        
+        ls 
+	}
+
+}

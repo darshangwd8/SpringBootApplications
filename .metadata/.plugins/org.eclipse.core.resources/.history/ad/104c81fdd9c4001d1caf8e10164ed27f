@@ -1,0 +1,4 @@
+spring.datasource.url=jdbc:msql://localhost/employee_management_system
+spring.datasource.username=root
+spring.datasource.password=root
+spring.sql.init.platform=mysql
