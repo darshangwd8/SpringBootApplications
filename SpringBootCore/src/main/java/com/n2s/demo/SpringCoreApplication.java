@@ -11,8 +11,8 @@ public class SpringCoreApplication {
 //		SpringApplication.run(SpringCoreApplication.class, args);
 //		System.out.println("My demo Spring Boot Project");
 		ConfigurableApplicationContext ct = SpringApplication.run(SpringCoreApplication.class, args);
-	    User u1 = (User)ct.getBean(User.class);
-	   // User u2 = (User)ct.getBean(User.class);
-	    u1.showid();
+	        User u1 = (User)ct.getBean(User.class);
+//              User u2 = (User)ct.getBean(User.class);
+	        u1.showid();
 	}
 }
